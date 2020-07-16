@@ -1,0 +1,42 @@
+.inputpayment{
+    padding-top: 200px;
+    background-color: black;
+    color: blanchedalmond;
+    text-align: center;
+    
+}
+
+.formpayment input{
+    width: 300px;
+    height: 30px;
+    padding: '0 10px';
+    border-radius: 5px;
+    font-size: medium;
+    color:red;
+    padding-left: 10px;
+}
+
+.buttonattache{
+    width: 300px;
+    height: 40px;
+    color:red;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-align: left;
+
+}
+
+.buttonsend{
+    width: 300px;
+    height: 40px;
+    background-color:red;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+.form-container{
+    padding-top: 20px;
+}

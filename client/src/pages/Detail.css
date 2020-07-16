@@ -1,0 +1,95 @@
+.Detail{
+  padding-top: 60px;
+  padding-left: 60px; 
+}
+.bawah{
+  display: flex;
+  padding-top: 20px;
+}
+.buttonepisodes{
+  padding-bottom: 20px;
+  background-color: black;
+  display: flex;
+  cursor: pointer;
+}
+.buttonepisodes button{
+  width: 150px;
+  height: 30px;
+  background-color: red;
+  border-radius: 8px;
+  color: white;
+  font-size: large;
+  border: red;
+}
+.description-container {
+    font-family: "Muli", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45vh;
+    margin: 0;
+    width: 60%;
+    color: white;
+  }
+  
+  .episode-container {
+    font-family: "Muli", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45vh;
+    margin: 0;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+  }
+  .movie-image img{
+    border-radius: 5px;
+  }
+  .movie {
+    display: flex;
+    max-width: 90%;
+    margin: 20px;
+    overflow: hidden;
+    width: 4000;
+  }
+  .movie-description {
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 0 20px;
+  }
+  
+  .year {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .tipe {
+    border: 1px solid #ffffff;
+    padding: 5px 5px;
+    border-radius: 5px;
+  }
+  
+  .play-now {
+    flex-direction: column;
+    display: flex;
+    max-width: 100%;
+    margin: 20px;
+    overflow: hidden;
+    width: 500px;
+    position: relative;
+  }
+  
+  .description {
+    margin-top: 40px;
+    font-size: 17px;
+    text-align: justify;
+  }
+  
+  .img-play-now {
+    position: absolute;
+    top: 40%;
+    align-self: center;
+    color: white;
+  }
+  

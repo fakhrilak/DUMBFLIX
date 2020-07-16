@@ -1,0 +1,34 @@
+.background-addartis{
+    background-color: black;
+}
+.form-input-artis{
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+.form-submit{
+    background-color: black;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.form-submit button{
+    background-color: red;
+    border-radius: 5px;
+    width: 700px;
+    height: 40px;
+    color: white;
+    margin-bottom: 50px;
+    
+}
+.Addfilm{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.Addfilm button{
+    background-color: red;
+    height: 30px;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+}

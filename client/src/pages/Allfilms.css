@@ -1,0 +1,62 @@
+.allfilms{
+    padding-top: 100px;
+    padding-bottom: 500px;
+}
+.filmsproperty button{
+   width: 150px;
+   height: 35px;
+   font-size: 20px;
+   font-weight: bolder;
+   background-color: red;
+   border: 2px solid red;
+   border-radius: 5px;
+   color: blanchedalmond;
+}
+.filmsproperty select{
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: red;
+    border: 2px solid red;
+    color: blanchedalmond;
+    border-radius: 5px;
+}
+.filmsproperty{
+    display: table-row-group;
+}
+.filtercontainer{
+    padding-left: 10px;
+}
+.filtercontainer input{
+    border-color:red;
+    height: 28px;
+    width: 50px;
+    border-radius: 5px;
+    border-width: 2px;
+    background: rgba(210, 210, 210, 0.25);
+    color: white;
+    font-size: medium;
+}
+.buttondel{
+    padding-left: 200px;
+}
+.buttondel button{
+    background-color: black;
+    color: red;
+    border: black;
+    font-size: large;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.buttondelet{
+    padding-left: 10px;
+}
+
+.buttondelet button{
+    width: 60px;
+    font-size: small;
+    text-align: center;
+    
+}
