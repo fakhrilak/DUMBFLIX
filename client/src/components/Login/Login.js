@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Modal from "../Modal/Modal";
 import { handleLogin } from "../../actions/auth";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 
 const Login = ({
   showModalLogin,
@@ -27,7 +26,7 @@ const Login = ({
     e.preventDefault();
     handleLogin(email, password, showModalLogin);
   };
-
+  console.log(error)
   return (
     <div>
       {modalLogin ? (
@@ -36,11 +35,7 @@ const Login = ({
 
       <Modal className="modal" show={modalLogin}>
         <h1 style={{ marginBottom: "40px" }}>LOGIN</h1>
-        {error === null || loading ? (
-          ""
-        ) : (
-          <p style={{ textTransform: "capitalize", margin: "0 0" }}>{error}</p>
-        )}
+        <p>{error}</p>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
@@ -75,11 +70,6 @@ const Login = ({
       </Modal>
     </div>
   );
-};
-
-Login.propTypes = {
-  handleLogin: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

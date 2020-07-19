@@ -3,7 +3,6 @@ import {postmovie} from "../actions/film";
 import { getallcategory} from "../actions/category";
 import { connect } from "react-redux";
 import { useHistory } from 'react-router-dom';
-import PropTypes from "prop-types";
 import './Addfilm.css'
 
 const Addfilm = ({ getallcategory, postmovie, category:{allcategory,loading}}) => {

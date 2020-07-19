@@ -4,13 +4,24 @@ import { getFilmsAll} from "../actions/film";
 import { connect } from "react-redux";
 
 const AddEpisodes = ({postepisodes,  getFilmsAll,films:{filmsAll,loading}}) => {
-
+    const [limit,setlimit]=useState('')
     useEffect(()=>{
       getFilmsAll();
-      },[getFilmsAll]);
-
+      },[limit]);
+    
     let getmovie = [...filmsAll]
     let filmsTVSeries = getmovie.filter((el)=>el.category.id === 1 );
+    let filmsfilter = filmsTVSeries.filter((el)=>el.title === limit)
+    let film = null
+    if (limit === ''){
+      film = filmsTVSeries
+    }else{
+      film = filmsfilter
+    }
+
+    const handleLimit = (event)=>{
+      setlimit(event.target.value)
+    }
 
     const [formData, setFormData] = useState({
         title:"",
@@ -23,7 +34,7 @@ const AddEpisodes = ({postepisodes,  getFilmsAll,films:{filmsAll,loading}}) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
         console.log(e.target.name)
       };
-    
+      
       const { title, thumbnailFilm, linkFilm,filmId} = formData;
     
       const onSubmit = (e) => {
@@ -75,7 +86,7 @@ const AddEpisodes = ({postepisodes,  getFilmsAll,films:{filmsAll,loading}}) => {
               onChange={(e) => onChange(e)}
             />
           </div>
-          <div className="form-input-artis">
+          <div className="form-input-artis" style={{width:1105,display:'flex'}}>
                 <select
                     name="filmId"
                     className="custom-select"
@@ -85,16 +96,25 @@ const AddEpisodes = ({postepisodes,  getFilmsAll,films:{filmsAll,loading}}) => {
                     required
                     >
                     <option value={filmId}>Select Film</option>
-                    {filmsTVSeries == null || loading ? (
+                    {film == null || loading ? (
                         'loading'
                     ) : (
-                        filmsTVSeries.map((filmsTVSeries) => (
-                            <option value={filmsTVSeries.id} key={filmsTVSeries.id}>
-                                {filmsTVSeries.title}
+                        film.map((film) => (
+                            <option value={film.id} key={film.id}>
+                                {film.title}
                             </option>
                         ))
                     )}
                 </select>
+                <div style={{paddingLeft:10,width:800}}>
+                  <input
+                    type="text"
+                    className="custom-input"
+                    placeholder="Filter"
+                    value={limit}
+                    onChange = {handleLimit}
+                  />
+                </div>
           </div>
           <div className="form-submit" >
             <button className="save" type="submit">

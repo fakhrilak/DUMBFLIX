@@ -1,5 +1,5 @@
 import { API } from '../config/api';
-
+import {editsubs} from './payment';
 import {
 	GET_FILMS_ALL,
 	DELET_FILM_FAIL,
@@ -83,7 +83,6 @@ export const deletfilm = (id) => async (dispatch) => {
 			type: DELET_FILM_SUCCESS,
 			payload: res.data.data
 		});
-		dispatch(getFilmsAll())
 	} catch (err) {
 		dispatch({
 			type: DELET_FILM_FAIL,

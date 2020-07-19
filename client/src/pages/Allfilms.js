@@ -24,6 +24,7 @@ const Allfilms = ({getFilmsAll,deletfilm,films:{filmsAll,loading}}) => {
 
     const counterup=()=>{
         setdelet(!delet)
+        
     }
 
     const handlelimititem = (e)=>{
@@ -42,7 +43,7 @@ const Allfilms = ({getFilmsAll,deletfilm,films:{filmsAll,loading}}) => {
         A = sorttvseries.slice(0,limititem)
     }
     const actiondelet=(id)=>{
-        deletfilm(id); 
+        deletfilm(id);
     }
     const history = useHistory();
     const handleopenaddfilm = ()=>{

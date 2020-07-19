@@ -4,6 +4,7 @@ import HeroImage from "../components/HeroImage/HeroImage";
 import { heroImage1 } from "../components/Thumbnail/Thumbnail";
 import { connect } from "react-redux";
 import { getFilmsAll} from "../actions/film";
+import GridMovie from "../components/GridMovie/GridMovie"
 import './Home.css'
 const Home = ({
   getFilmsAll,
@@ -28,49 +29,9 @@ const Home = ({
     <div className= "app">
       <HeroImage heroImage={heroImage1} />
       <h3 className = "title">MOVIE</h3>
-      <div className="Home"> 
-        <div className="grid-music">
-          {movie === null || loading ? <div>Loading...</div> : movie.map((film, index) => (
-            <div className="card-music">
-              {user === null ||  user.subscribe ||user.role === 1  ? (
-                <>
-                  <img className="thumbnailmusic"src={film.thumbnailFilm} onClick={()=> history.push(`/detail/${film.id}`)}/>
-                  <p className="titlemusic">{film.title}</p>
-                  <p className="namaartis">{film.year}</p>
-                </>
-                ):(
-                  <>
-                    <img className="thumbnailmusic"src={film.thumbnailFilm} onClick={()=> history.push(`/payment`)}/>
-                    <p className="titlemusic">{film.title}</p>
-                    <p className="namaartis">{film.year}</p>
-                  </>
-                )}
-            </div>
-          ))}
-        </div>
-      </div>
-       <h3 className = "title">TV SERIES</h3>
-      <div className="Home">
-        <div className="grid-music">
-          {tvseries === null || loading ? <div>Loading...</div> : tvseries.map((film, index) => (
-            <div className="card-music">
-              {user === null ||  user.subscribe ||user.role === 1  ? (
-                <>
-                  <img className="thumbnailmusic"src={film.thumbnailFilm} onClick={()=> history.push(`/detail/${film.id}`)}/>
-                  <p className="titlemusic">{film.title}</p>
-                  <p className="namaartis">{film.year}</p>
-                </>
-                ):(
-                  <>
-                    <img className="thumbnailmusic"src={film.thumbnailFilm} onClick={()=> history.push(`/payment`)}/>
-                    <p className="titlemusic">{film.title}</p>
-                    <p className="namaartis">{film.year}</p>
-                  </>
-                )}
-            </div>
-          ))}
-        </div>
-       </div>
+          <GridMovie loading={loading} movie={movie} user={user}/>
+       <h3 className = "title">TV SERIES</h3>     
+          <GridMovie loading={loading} movie={tvseries} user={user}/>
     </div>
   );
 };

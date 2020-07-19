@@ -27,6 +27,7 @@ const IncomingTransaction = ({
 	const data = alltransaction .map((data, index) => {
 		let due_Date = dayjs(data.user.dueDate);
 		editsubs(due_Date.diff(now, 'day'),data.user.id)
+		console.log(due_Date.diff(now, 'day'),data.user.id)
 		return loading || alltransaction === null ? (<div>loading..</div>) : (
 			<tr key={data.id}>
 				<td>{index + 1}</td>
@@ -40,7 +41,7 @@ const IncomingTransaction = ({
 				<td
 					style={{color: data.user.subscribe && due_Date.diff(now, 'day') != 0? '#0ACF83' : '#FF0742'}}
 				>
-					{data.user.subscribe  && due_Date.diff(now, 'day') != 0? 'Active' : 'Not Active'}
+					{data.user.subscribe  && due_Date.diff(now, 'day') != 0 ?  'Active' : 'Not Active'}
 				</td>
 				<td
 					style={{color:data.status == 'Approved'? '#0ACF83'

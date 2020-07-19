@@ -45,7 +45,7 @@ const DetailMovie = ({
 	return loading || filmDetails === null ? (<div>Loading...</div>) : (
 	<div className="Detail">
 		<div style={{paddingLeft:350}}>
-			<ReactPlayer url={filmDetails.episodes[playx].linkFilm} controls={true}/>
+			<ReactPlayer url={filmDetails.episodes[playx].linkFilm} controls={true} style={{width:'100%',height:'100%'}}/>
 		</div>
 		<div className="bawah">
 			<div className="description-container" >

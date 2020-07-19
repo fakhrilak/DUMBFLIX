@@ -84,10 +84,10 @@ export const handleLogin = (email, password, showModalLogin) => async (
     });
     dispatch(loadUser());
     showModalLogin(); 
-  } catch (err) {
+  } catch (error) {
     dispatch({
       type: LOGIN_FAIL,
-      payload: err,
+      payload: error.response.data.error.message,
     });
   }
 };

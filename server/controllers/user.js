@@ -76,7 +76,7 @@ exports.editsubs = async (req, res) => {
 			}
 		});
 		let update = {};
-		if (status == '0' ) {
+		if (status <= '0' ) {
 			update.subscribe = false;
 		}
 		if (transaction) {await User.update(update, {			
